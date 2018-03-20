@@ -2,12 +2,12 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 
-import AuthScreen from './src/app/Screens/AuthScreen';
-import WelcomeScreen from './src/app/Screens/WelcomeScreen';
-import MapScreen from './src/app/Screens/MapScreen';
-import DeckScreen from './src/app/Screens/DeckScreen';
-import ReviewScreen from './src/app/Screens/ReviewScreen';
-import SettingsScreen from './src/app/Screens/SettingsScreen';
+import AuthScreen from './src/app/screens/AuthScreen';
+import WelcomeScreen from './src/app/screens/WelcomeScreen';
+import MapScreen from './src/app/screens/MapScreen';
+import DeckScreen from './src/app/screens/DeckScreen';
+import ReviewScreen from './src/app/screens/ReviewScreen';
+import SettingsScreen from './src/app/screens/SettingsScreen';
 
 export default class App extends React.Component {
   render() {
