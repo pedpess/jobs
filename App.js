@@ -1,7 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { TabNavigator, StackNavigator } from 'react-navigation';
+import { Provider } from 'react-redux';
 
+import store from './src/app/store';
 import AuthScreen from './src/app/screens/AuthScreen';
 import WelcomeScreen from './src/app/screens/WelcomeScreen';
 import MapScreen from './src/app/screens/MapScreen';
@@ -30,9 +32,11 @@ export default class App extends React.Component {
     });
 
     return (
-      <View style={styles.container}>
-        <MainNavigator />
-      </View>
+      <Provider store={store}>
+        <View style={styles.container}>
+          <MainNavigator />
+        </View>
+      </Provider>
     );
   }
 }
