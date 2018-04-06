@@ -27,7 +27,9 @@ class MapScreen extends React.Component {
     }
 
     onButtonPress = () => {
-        this.props.fetchJobs(this.state.region);
+        this.props.fetchJobs(this.state.region, () => {
+            this.props.navigation.navigate('deck');
+        });
     }
 
     render() {
@@ -66,7 +68,8 @@ const styles = {
     buttonContainer: {
         position: 'absolute',
         bottom: 20,
-        left: 0,
+        right: 10,
+        left: 10,
     }
 }
 
