@@ -1,6 +1,6 @@
 import React from 'react';
 import { Platform, ScrollView, View, Text, Linking } from 'react-native';
-import { Button, Card } from 'react-native-elements';
+import { Button, Card, Icon } from 'react-native-elements';
 import { MapView } from 'expo';
 import { connect } from 'react-redux';
 
@@ -18,6 +18,9 @@ class ReviewScreen extends React.Component {
         ),
         style: {
             marginTop: Platform.OS === 'android' ? 24 : 0
+        },
+        tabBarIcon: ({ tintColor }) => {
+            return <Icon name="favorite" size={25} color={tintColor} />
         }
     })
 
@@ -53,7 +56,7 @@ class ReviewScreen extends React.Component {
                         </View>
                         <MapView
                             scrollEnabled={false}
-                            style={{ flex: 1, marginBottom: 10}}
+                            style={{ flex: 1, marginBottom: 10 }}
                             cacheEnabled={Platform.OS === 'android'}
                             initialRegion={initialRegion}
                         />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import { Button } from 'react-native-elements';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
@@ -13,7 +13,10 @@ class SettingsScreen extends React.Component {
                     large
                     icon={{ name: 'delete-forever' }}
                     backgroundColor="#F44336"
-                    onPress={() => this.props.clearLikedJobs()}
+                    onPress={() => {
+                        this.props.clearLikedJobs()
+                        this.props.navigation.navigate('review')
+                    }}
                 />
             </View>
         );
