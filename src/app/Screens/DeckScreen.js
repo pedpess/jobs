@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { MapView } from 'expo';
 import { Card, Button } from 'react-native-elements';
 import Swipe from '../components/Swipe';
-import * actions from '../actions';
+import * as actions from '../actions';
 
 class DeckScreen extends React.Component {
 

@@ -3,7 +3,7 @@ import { Facebook } from 'expo';
 
 import {
     FACEBOOK_LOGIN_SUCCESS,
-    FACEBOOK_LOGIN_FAILED
+    FACEBOOK_LOGIN_FAILED,
 } from './types';
 
 export const facebookLogin = () => async dispatch => {
@@ -28,13 +28,13 @@ const doFacebookLogin = async (dispatch) => {
 
     if (type === 'cancel') {
         return dispatch({
-            type: 'FACEBOOK_LOGIN_FAILED',
+            type: FACEBOOK_LOGIN_FAILED,
 
         });
     }
 
     await AsyncStorage.setItem('fb_token', token);
-    
+
     dispatch({
         type: FACEBOOK_LOGIN_SUCCESS,
         payload: token

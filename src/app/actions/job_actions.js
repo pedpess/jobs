@@ -33,7 +33,7 @@ export const fetchJobs = (region, callback) => async (dispatch) => {
     });
     callback();
   } catch (e) {
-    console.error(e);
+    throw Error(e);
   }
 };
 
