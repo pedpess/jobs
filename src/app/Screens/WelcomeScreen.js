@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, AsyncStorage } from 'react-native';
+import { View, AsyncStorage } from 'react-native';
 import { AppLoading } from 'expo';
 import _ from 'lodash';
 import Slides from '../components/Slides';
