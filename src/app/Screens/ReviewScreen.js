@@ -1,6 +1,7 @@
 import React from 'react';
-import { Platform, ScrollView, View, Text } from 'react-native';
+import { Platform, ScrollView, View, Text, Linking } from 'react-native';
 import { Button, Card } from 'react-native-elements';
+import { MapView } from 'expo';
 import { connect } from 'react-redux';
 
 class ReviewScreen extends React.Component {
@@ -22,16 +23,46 @@ class ReviewScreen extends React.Component {
 
     renderLikedJobs() {
         return this.props.likedJobs.map(job => {
+
+            const {
+                company,
+                formattedRelativeTime,
+                url,
+                jobkey,
+                longitude,
+                latitude,
+                jobtitle,
+            } = job;
+
+            const initialRegion = {
+                longitude,
+                latitude,
+                latitudeDelta: 0.045,
+                longitudeDelta: 0.02
+            }
+
             return (
                 <Card
-                    key={job.jobkey}
+                    key={jobkey}
+                    title={jobtitle}
                 >
                     <View style={{ height: 200 }}>
                         <View style={styles.detailWrapper}>
-                            <Text style={styles.italics}>{job.company}</Text>
-                            <Text style={styles.italics}>{job.formattedRelativeTime}</Text>
+                            <Text style={styles.italics}>{company}</Text>
+                            <Text style={styles.italics}>{formattedRelativeTime}</Text>
                         </View>
+                        <MapView
+                            scrollEnabled={false}
+                            style={{ flex: 1, marginBottom: 10}}
+                            cacheEnabled={Platform.OS === 'android'}
+                            initialRegion={initialRegion}
+                        />
                     </View>
+                    <Button
+                        title="Apply Now"
+                        backgroundColor="#03A9F4"
+                        onPress={() => Linking.openURL(url)}
+                    />
                 </Card>
             );
         });
