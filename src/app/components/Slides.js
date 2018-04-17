@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, ScrollView, Dimensions } from 'react-native';
 import { Button } from 'react-native-elements';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -46,7 +46,7 @@ export default class Slides extends React.Component {
     }
 }
 
-const styles = StyleSheet.create({
+const styles = {
     slideStyle: {
         flex: 1,
         justifyContent: 'center',
@@ -62,4 +62,4 @@ const styles = StyleSheet.create({
         backgroundColor: '#D32F2F',
         marginTop: 20
     }
-});
+};
